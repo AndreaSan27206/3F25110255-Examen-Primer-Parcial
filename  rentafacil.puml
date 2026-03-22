@@ -1,0 +1,65 @@
+@startuml
+
+class Vehiculos
+class Autos 
+class Motos 
+class Camionetas 
+class Placa 
+class Marca 
+class Modelo 
+class Fabricacion 
+class PrecioporDia
+class CapDeCargakg
+class CilindradaCC
+class Cliente 
+class ID
+class Nombre 
+class DNI
+class NumTelefono
+class Alquileres
+class Codigo
+class FechaI
+class FechaF
+class CostTotal
+class Estado
+class GestDeReg
+class NvCliente
+class NvVehiculo
+class AlquilerNv
+class AlquilerF
+class Activo 
+class Finalizado
+class Registro
+class CantDias
+
+Vehiculos --|> Autos
+Vehiculos --|> Motos
+Vehiculos --|> Camionetas 
+Vehiculos "1" *-- "1" Placa
+Vehiculos "1" *-- "1" Marca
+Vehiculos "1" *-- "1" Modelo
+Vehiculos "1" *-- "1" Fabricacion
+Vehiculos "1" *-- "1" PrecioporDia
+Camionetas "1" *-- "1" CapDeCargakg
+Motos "1" *-- "1" CilindradaCC
+Clientes "1" *-- "1" ID
+Clientes "1" *-- "1" Nombre 
+Clientes "1" *-- "1" DNI
+Clientes "1" *-- "2" NumTelefono
+Clientes "1" o-- "1..3" Alquileres
+Alquileres o-- Vehiculos
+Alquileres "1" *-- "1" Codigo
+Alquileres "1" *-- "1" FechaI
+Alquileres "1" *-- "1" FechaF
+Alquileres "1" *-- "1" CostTotal
+Alquileres "1" *-- "1" Estado
+Alquileres "1" o-- "1" Cliente
+GestDeReg"1" o-- "*"NvCliente
+GestDeReg"1" o-- "*"NvVehiculo
+Registro"1" *-- "*"AlquilerNv
+Registro"1" *-- "*"AlquilerF
+GestDeReg o-- Registro
+CostTotal= PrecioporDiaxCantDias
+
+ 
+@enduml
